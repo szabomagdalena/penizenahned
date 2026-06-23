@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Peníze Hned s.r.o.</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<div class="container">
+<h1>Peníze Hned s.r.o.</h1>
+<div class="langs">
+<button onclick="setLang('cs')">CZ</button>
+<button onclick="setLang('sk')">SK</button>
+<button onclick="setLang('en')">EN</button>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<h2 id="hero-title">Rychlá a transparentní finanční řešení</h2>
+<p id="hero-text">Pomáháme klientům získat přehled o možnostech financování.</p>
+</section>
+
+<section class="container">
+<h2>Kalkulačka</h2>
+<input id="amount" type="range" min="10000" max="1000000" value="50000" oninput="calc()">
+<p>Částka: <span id="amountv"></span> CZK</p>
+<input id="months" type="range" min="6" max="120" value="24" oninput="calc()">
+<p>Měsíce: <span id="monthsv"></span></p>
+<p>Měsíční splátka: <span id="monthly"></span></p>
+</section>
+
+<section class="container">
+<h2>Kontakt</h2>
+<p>Herlianska 132/16, Bratislava-Ružinov, 82102</p>
+<p><a href="mailto:szabo@penizenahned.cz">szabo@penizenahned.cz</a></p>
+</section>
+
+<footer>
+<a href="privacy.html">Privacy</a> |
+<a href="terms.html">Terms</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
