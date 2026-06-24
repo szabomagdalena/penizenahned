@@ -1,138 +1,98 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Peníze Hned s.r.o. | Prémiové finanční řešení</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-
-<header class="site-header">
-    <div class="container header-flex">
-        <div class="logo-area">
-            <img src="logo.png" alt="Peníze Hned s.r.o. Logo" class="site-logo">
-        </div>
-        <nav class="langs" aria-label="Výběr jazyka">
-            <button class="lang-btn active" onclick="setLang('cs')">CZ</button>
-            <button class="lang-btn" onclick="setLang('sk')">SK</button>
-            <button class="lang-btn" onclick="setLang('en')">EN</button>
-        </nav>
-    </div>
-</header>
-
-<section class="hero-gradient-wrapper">
-    <div class="hero-overlay-curtain"></div>
-    <div class="hero-content">
-        <h2 id="hero-title" class="hero-main-title">Rychlá a transparentní finanční řešení</h2>
-        <p id="hero-text" class="hero-sub-text">Pomáháme klientům získat přehled o možnostech financování bez skrytých poplatků.</p>
-        <a href="#calculator-card" class="btn-premium hero-cta">Spočítat splátku</a>
-    </div>
-</section>
-
-<main class="main-canvas">
-    
-    <section id="calculator-card" class="container elevated-card">
-        <header class="card-header">
-            <h2 class="section-title">Kalkulačka úvěru</h2>
-        </header>
-        <div class="calculator-grid">
-            <div class="calc-controls-block">
-                <div class="range-group">
-                    <label for="amount" class="input-label">Požadovaná částka</label>
-                    <input id="amount" class="gold-range-slider" type="range" min="10000" max="1000000" value="50000" oninput="calc()">
-                    <div class="range-value-display"><span id="amountv">50 000</span> CZK</div>
-                </div>
-                
-                <div class="range-group">
-                    <label for="months" class="input-label">Doba splácení</label>
-                    <input id="months" class="gold-range-slider" type="range" min="6" max="120" value="24" oninput="calc()">
-                    <div class="range-value-display"><span id="monthsv">24</span> měsíců</div>
-                </div>
-            </div>
-            <div class="calc-result-display-panel">
-                <h3 class="result-panel-heading">Odhadovaná měsíční splátka</h3>
-                <div class="numeric-output-large"><span id="monthly">---</span> CZK</div>
-                <p class="calc-disclaimer-text">*Tato kalkulace je pouze orientační a nezavazuje k uzavření smlouvy.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="container elevated-card">
-        <header class="card-header">
-            <h2 class="section-title">O nás</h2>
-        </header>
-        <article class="about-us-content-body">
-            <p>Jsme stabilní lokální partner v oblasti finančních řešení a úvěrů. Naším cílem je pomáhat lidem bezpečně a transparentně překlenout finanční potřeby – ať už jde o bydlení, podnikání nebo nečekané výdaje. Zakládáme si na férovém jednání, diskrétnosti a řešení šitém na míru každému klientovi.</p>
-        </article>
-    </section>
-
+<!-- Trust Building: Dedicated Trustline-Inspired Testimonials Layout Canvas -->
     <section class="container testimonials-section-wrapper">
         <h2 class="section-title title-centered">Reference našich klientů</h2>
         <div class="testimonials-responsive-grid">
-            <blockquote class="testimonial-elevated-card">
-                <p class="client-quote-text">"Rychlé a férové jednání. Potřeboval jsem překlenout složité období v podnikání a schválení úvěru proběhlo bez zbytečného papírování."</p>
-                <cite class="client-identity-signature">Petr M., Brno</cite>
-            </blockquote>
             
-            <blockquote class="testimonial-elevated-card">
+            <!-- Card 1 -->
+            <div class="premium-trust-card">
+                <div class="card-trust-header">
+                    <div class="stars">★★★★★</div>
+                    <span class="verified-badge">✓ Ověřený klient</span>
+                </div>
+                <p class="client-quote-text">"Rychlé a férové jednání. Potřeboval jsem překlenout složité období v podnikání a schválení úvěru proběhlo bez zbytečného papírování."</p>
+                <div class="client-meta">
+                    <h4 class="client-name">Petr M.</h4>
+                    <span class="client-location">Brno</span>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="premium-trust-card">
+                <div class="card-trust-header">
+                    <div class="stars">★★★★★</div>
+                    <span class="verified-badge">✓ Ověřený klient</span>
+                </div>
                 <p class="client-quote-text">"Oceňuji lidský přístup a profesionální vystupování. Podmínky byly jasné od začátku do konce, žádné skryté poplatky."</p>
-                <cite class="client-identity-signature">Jana K., Praha</cite>
-            </blockquote>
+                <div class="client-meta">
+                    <h4 class="client-name">Jana K.</h4>
+                    <span class="client-location">Praha</span>
+                </div>
+            </div>
 
-            <blockquote class="testimonial-elevated-card">
+            <!-- Card 3 -->
+            <div class="premium-trust-card">
+                <div class="card-trust-header">
+                    <div class="stars">★★★★★</div>
+                    <span class="verified-badge">✓ Ověřený klient</span>
+                </div>
                 <p class="client-quote-text">"Skvělá komunikace i během víkendu. Pomohli mi konsolidovat staré nevýhodné půjčky a ušetřit nemalé peníze každý měsíc."</p>
-                <cite class="client-identity-signature">Marek T., Ostrava</cite>
-            </blockquote>
+                <div class="client-meta">
+                    <h4 class="client-name">Marek T.</h4>
+                    <span class="client-location">Ostrava</span>
+                </div>
+            </div>
 
-            <blockquote class="testimonial-elevated-card">
+            <!-- Card 4 -->
+            <div class="premium-trust-card">
+                <div class="card-trust-header">
+                    <div class="stars">★★★★★</div>
+                    <span class="verified-badge">✓ Ověřený klient</span>
+                </div>
                 <p class="client-quote-text">"Jako živnostník mám občas problém s doložením příjmů v bance. Tady mi vyšli vstříc a našli bezpečné individuální řešení na míru."</p>
-                <cite class="client-identity-signature">Lucie R., Plzeň</cite>
-            </blockquote>
+                <div class="client-meta">
+                    <h4 class="client-name">Lucie R.</h4>
+                    <span class="client-location">Plzeň</span>
+                </div>
+            </div>
 
-            <blockquote class="testimonial-elevated-card">
+            <!-- Card 5 -->
+            <div class="premium-trust-card">
+                <div class="card-trust-header">
+                    <div class="stars">★★★★★</div>
+                    <span class="verified-badge">✓ Ověřený klient</span>
+                </div>
                 <p class="client-quote-text">"Vše proběhlo přesně tak, jak mi bylo slíbeno na schůzce. Transparentní podmínky, rychlé vyplacení peněz a vstřícné jednání."</p>
-                <cite class="client-identity-signature">Tomáš V., Liberec</cite>
-            </blockquote>
+                <div class="client-meta">
+                    <h4 class="client-name">Tomáš V.</h4>
+                    <span class="client-location">Liberec</span>
+                </div>
+            </div>
 
-            <blockquote class="testimonial-elevated-card">
+            <!-- Card 6 -->
+            <div class="premium-trust-card">
+                <div class="card-trust-header">
+                    <div class="stars">★★★★★</div>
+                    <span class="verified-badge">✓ Ověřený klient</span>
+                </div>
                 <p class="client-quote-text">"Nejvíce oceňuji absolutní diskrétnost a rychlost vyřízení. Do 24 hodin bylo vše schváleno. Vřele doporučuji všem."</p>
-                <cite class="client-identity-signature">Alena S., Olomouc</cite>
-            </blockquote>
+                <div class="client-meta">
+                    <h4 class="client-name">Alena S.</h4>
+                    <span class="client-location">Olomouc</span>
+                </div>
+            </div>
 
-            <blockquote class="testimonial-elevated-card">
+            <!-- Card 7 -->
+            <div class="premium-trust-card">
+                <div class="card-trust-header">
+                    <div class="stars">★★★★★</div>
+                    <span class="verified-badge">✓ Ověřený klient</span>
+                </div>
                 <p class="client-quote-text">"Profesionálové na svém místě. Žádné kličky ve smlouvách ani skryté poplatky předem. Velmi solidní a férová společnost."</p>
-                <cite class="client-identity-signature">Pavel K., České Budějovice</cite>
-            </blockquote>
+                <div class="client-meta">
+                    <h4 class="client-name">Pavel K.</h4>
+                    <span class="client-location">České Budějovice</span>
+                </div>
+            </div>
+            
         </div>
     </section>
-
-    <section class="container contact-standalone-wrapper">
-        <div class="contact-details-panel elevated-card">
-            <h2 class="section-title title-centered">Kontakt</h2>
-            <p class="contact-intro-lead text-center">Máte dotazy k úvěrům nebo chcete probrat své možnosti? Ozvěte se nám.</p>
-            <address class="structured-address-block">
-                <div class="address-grid-item"><strong>📍 Adresa:</strong> Herlianska 132/16, Bratislava-Ružinov, 82102</div>
-                <div class="address-grid-item"><strong>✉️ E-mail:</strong> <a href="mailto:szabo@penizenahned.cz" class="high-intent-link">szabo@penizenahned.cz</a></div>
-                <div class="address-grid-item"><strong>📞 Telefon:</strong> +420 123 456 789</div>
-            </address>
-        </div>
-    </section>
-</main>
-
-<footer class="corporate-footer">
-    <div class="container footer-flex-content">
-        <p class="copyright-text">&copy; 2026 Peníze Hned s.r.o. Všechna práva variavany.</p>
-        <div class="footer-legal-links">
-            <a href="privacy.html" class="legal-link">Ochrana soukromí (Privacy)</a>
-            <a href="terms.html" class="legal-link">Obchodní podmínky (Terms)</a>
-        </div>
-    </div>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
