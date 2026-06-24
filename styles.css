@@ -1,3 +1,21 @@
+/* Container Box to cleanly present the logo asset */
+.logo-badge {
+  background: #ffffff; 
+  padding: 6px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-logo {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+
 /* Color Palette & Variables from logo.png */
 :root {
   --primary: #0F2744;       /* Trustworthy Navy */
