@@ -1,130 +1,396 @@
 <!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Peníze Hned s.r.o. | Premium</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<html class="light" lang="cs"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Peníze Hned | Rychlá a transparentní finanční řešení</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-container": "#798fb1",
+                        "surface-container-high": "#e6e8eb",
+                        "tertiary": "#011225",
+                        "surface-container": "#eceef1",
+                        "background": "#f7f9fc",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#775a19",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#b6c8e2",
+                        "surface-tint": "#4a5f7f",
+                        "on-surface": "#191c1e",
+                        "on-background": "#191c1e",
+                        "inverse-on-surface": "#eff1f4",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "primary-container": "#0f2744",
+                        "primary": "#001229",
+                        "surface-dim": "#d8dadd",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "on-surface-variant": "#44474d",
+                        "on-tertiary-container": "#7d8fa6",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c4c6ce",
+                        "on-secondary-container": "#785a1a",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#fed488",
+                        "surface-container-highest": "#e0e3e6",
+                        "surface-container-low": "#f2f4f7",
+                        "surface": "#f7f9fc",
+                        "inverse-primary": "#b2c8ed",
+                        "surface-variant": "#e0e3e6",
+                        "on-tertiary-fixed": "#0a1c30",
+                        "tertiary-container": "#16273b",
+                        "on-primary-fixed": "#021c39",
+                        "primary-fixed": "#d4e3ff",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#37485d",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#ffdea5",
+                        "secondary-fixed-dim": "#e9c176",
+                        "outline": "#74777e",
+                        "surface-bright": "#f7f9fc",
+                        "primary-fixed-dim": "#b2c8ed",
+                        "on-primary-fixed-variant": "#324866",
+                        "on-secondary-fixed": "#261900",
+                        "tertiary-fixed": "#d2e4fe",
+                        "brand-gold": "#c5a059",
+                        "brand-navy": "#0F2744"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "container-padding-mobile": "24px",
+                        "container-padding-desktop": "48px",
+                        "unit": "8px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "gutter": "24px",
+                        "stack-lg": "32px",
+                        "section-gap": "80px"
+                    },
+                    fontFamily: {
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-sm": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    fontSize: {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .card-shadow { shadow: 0 10px 30px rgba(15, 39, 68, 0.05); }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #c5a059;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
 </head>
-<body>
-
-<header>
-    <div class="container header-flex">
-        <!-- Dark badge wrapper to fix the white logo issue -->
-        <div class="logo-badge">
-            <img src="logo.png" alt="Peníze Hned s.r.o." class="site-logo">
-        </div>
-        <div class="langs">
-            <button class="lang-btn active" data-lang="cs" onclick="setLang('cs')">CZ</button>
-            <button class="lang-btn" data-lang="sk" onclick="setLang('sk')">SK</button>
-            <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
-        </div>
-    </div>
+<body class="bg-background text-on-surface selection:bg-brand-gold selection:text-white">
+<!-- Header / TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 h-20 flex items-center shadow-sm">
+<div class="flex justify-between items-center w-full px-container-desktop max-w-7xl mx-auto">
+<a class="flex items-center gap-2" href="#">
+<img alt="Peníze Hned Logo" class="h-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDropQq2paLFnyGI2CKFro1w5l2oqrpgWmGN3hrKRgs4Y7Oww7_uiAQQ58SknImhfflKtrL8tRC8G96VtLyROdOwgLlwTFIYdBSJOgW6tu1MwGjl9QgHwfqFI9chqHjqJ6PV97nf2DnYsoDeJiwZWef1Rr3TMSbqvSNqRkzcR61wxjhi6H-maNDjHTJHvu-MKMKzFaLEKkrLmjcaDt3IkPKH-JSdtt1Vah_PTkt9ImxL7JhBuA9RATXXZdg1qOzumNp0XTEGkR1sQU"/>
+</a>
+<nav class="hidden md:flex items-center gap-8 font-label-md text-label-md uppercase tracking-wider">
+<a class="text-secondary font-bold border-b-2 border-secondary transition-all" href="#">Půjčky</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#kalkulacka">Kalkulačka</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#o-nas">O nás</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#reference">Reference</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#kontakt">Kontakt</a>
+</nav>
+<div class="flex items-center gap-4 text-label-md font-label-md text-on-surface-variant">
+<span>CZ | SK | EN</span>
+<button class="md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
 </header>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 md:pt-48 md:pb-40 bg-gradient-to-br from-primary-container to-[#1a3a60] text-on-primary overflow-hidden">
+<div class="absolute inset-0 opacity-10">
 
-<section class="hero">
-    <div class="hero-content">
-        <h2 id="hero-title" 
-            data-lang-cs="Rychlá a transparentní finanční řešení" 
-            data-lang-sk="Rýchle a transparentné finančné riešenia" 
-            data-lang-en="Fast and Transparent Financial Solutions">Rychlá a transparentní finanční řešení</h2>
-        <p id="hero-text" 
-            data-lang-cs="Pomáháme klientům získat přehled o možnostech financování." 
-            data-lang-sk="Pomáhame klientom získať prehľad o možnostiach financovania." 
-            data-lang-en="We help clients gain an overview of financing options.">Pomáháme klientům získat přehled o možnostech financování.</p>
-        <a href="#calculator" class="btn-premium"
-           data-lang-cs="Spočítat splátku" data-lang-sk="Spočítať splátku" data-lang-en="Calculate Payment">Spočítat splátku</a>
-    </div>
+</div>
+<div class="relative px-container-desktop max-w-7xl mx-auto flex flex-col items-start gap-stack-lg">
+<span class="px-4 py-1 rounded-full bg-brand-gold/10 border border-brand-gold/30 text-brand-gold font-label-md text-label-md">
+                    FINANČNÍ STABILITA PRO VÁS
+                </span>
+<h1 class="font-display-lg text-display-lg max-w-3xl leading-tight">
+                    Rychlá a transparentní <br/> <span class="text-brand-gold">finanční řešení</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-primary-container max-w-xl">
+                    Poskytujeme individuální úvěrové produkty s důrazem na diskrétnost, rychlost a férové podmínky pro podnikatele i soukromé osoby.
+                </p>
+<div class="flex flex-wrap gap-stack-md mt-4">
+<a class="bg-brand-gold text-white px-8 py-4 font-label-md text-label-md uppercase tracking-widest border-b-2 border-transparent hover:border-white transition-all transform hover:-translate-y-1" href="#kalkulacka">
+                        Zjistit více
+                    </a>
+<a class="border border-on-primary/30 px-8 py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-white/10 transition-all transform hover:-translate-y-1" href="#kontakt">
+                        Kontaktujte nás
+                    </a>
+</div>
+</div>
 </section>
-
-<main class="main-content">
-    <!-- Calculator Section -->
-    <section id="calculator" class="container section-card">
-        <h2 class="section-title" data-lang-cs="Kalkulačka úvěru" data-lang-sk="Kalkulačka úveru" data-lang-en="Loan Calculator">Kalkulačka úvěru</h2>
-        <div class="calculator-grid">
-            <div class="calc-controls">
-                <div class="range-group">
-                    <label data-lang-cs="Požadovaná částka" data-lang-sk="Požadovaná čiastka" data-lang-en="Requested Amount">Požadovaná částka</label>
-                    <input id="amount" type="range" min="10000" max="1000000" value="50000" oninput="calc()">
-                    <div class="range-value"><span id="amountv">50 000</span> CZK</div>
-                </div>
-                
-                <div class="range-group">
-                    <label data-lang-cs="Doba splácení" data-lang-sk="Doba splácania" data-lang-en="Repayment Period">Doba splácení</label>
-                    <input id="months" type="range" min="6" max="120" value="24" oninput="calc()">
-                    <div class="range-value"><span id="monthsv">24</span> <span data-lang-cs="měsíců" data-lang-sk="mesiacov" data-lang-en="months">měsíců</span></div>
-                </div>
-            </div>
-            <div class="calc-result">
-                <h3 data-lang-cs="Odhadovaná měsíční splátka" data-lang-sk="Odhadovaná mesačná splátka" data-lang-en="Estimated Monthly Payment">Odhadovaná měsíční splátka</h3>
-                <div class="result-display"><span id="monthly">---</span> CZK</div>
-                <p class="calc-disclaimer" data-lang-cs="*Tato kalkulace je pouze orientační." data-lang-sk="*Táto kalkulácia je iba orientačná." data-lang-en="*This calculation is indicative only.">*Tato kalkulace je pouze orientační.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section class="container section-card">
-        <h2 class="section-title" data-lang-cs="O nás" data-lang-sk="O nás" data-lang-en="About Us">O nás</h2>
-        <p class="about-text" 
-           data-lang-cs="Jsme stabilní lokální partner v oblasti finančních řešení a úvěrů. Naším cílem je pomáhat lidem bezpečně a transparentně překlenout finanční potřeby." 
-           data-lang-sk="Sme stabilný lokálny partner v oblasti finančných riešení a úverov. Naším cieľom je pomáhať ľuďom bezpečne a transparentne preklenúť finančné potreby." 
-           data-lang-en="We are a stable local partner in financial solutions and loans. Our goal is to help people safely and transparently bridge financial needs.">
-           Jsme stabilní lokální partner v oblasti finančních řešení a úvěrů. Naším cílem je pomáhat lidem bezpečně a transparentně překlenout finanční potřeby.
-        </p>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="container">
-        <h2 class="section-title text-center" data-lang-cs="Reference" data-lang-sk="Referencie" data-lang-en="Testimonials">Reference</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <p class="quote" data-lang-cs="&quot;Rychlé a férové jednání.&quot;" data-lang-sk="&quot;Rýchle a férové konanie.&quot;" data-lang-en="&quot;Fast and fair processing.&quot;">"Rychlé a férové jednání."</p>
-                <h4 class="client-name">Petr M., Brno</h4>
-            </div>
-            <div class="testimonial-card">
-                <p class="quote" data-lang-cs="&quot;Oceňuji lidský přístup.&quot;" data-lang-sk="&quot;Oceňujem ľudský prístup.&quot;" data-lang-en="&quot;I appreciate the human approach.&quot;">"Oceňuji lidský přístup."</p>
-                <h4 class="client-name">Jana K., Praha</h4>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="container contact-grid">
-        <div class="contact-info section-card">
-            <h2 class="section-title" data-lang-cs="Kontakt" data-lang-sk="Kontakt" data-lang-en="Contact">Kontakt</h2>
-            <div class="contact-details">
-                <p><strong>📍 Adresa:</strong> Herlianska 132/16, Bratislava-Ružinov, 82102[cite: 1]</p>
-                <p><strong>✉️ E-mail:</strong> <a href="mailto:szabo@penizenahned.cz">szabo@penizenahned.cz</a>[cite: 1]</p>
-            </div>
-        </div>
-
-        <div class="contact-form-container section-card">
-            <h3 class="form-title" data-lang-cs="Nezávazná poptávka" data-lang-sk="Nezáväzná dopyt" data-lang-en="Inquiry Form">Nezávazná poptávka</h3>
-            <form class="premium-form">
-                <div class="form-group">
-                    <label for="form-name" data-lang-cs="Jméno" data-lang-sk="Meno" data-lang-en="Name">Jméno</label>
-                    <input type="text" id="form-name" required placeholder="Jan Novák">
-                </div>
-                <button type="submit" class="btn-premium btn-full" data-lang-cs="Odeslat" data-lang-sk="Odoslať" data-lang-en="Submit">Odeslat</button>
-            </form>
-        </div>
-    </section>
+<!-- Calculator Block -->
+<section class="py-section-gap bg-surface" id="kalkulacka">
+<div class="px-container-desktop max-w-7xl mx-auto">
+<div class="bg-surface-container-lowest p-10 md:p-14 shadow-[0_10px_30px_rgba(15,39,68,0.05)] grid md:grid-cols-2 gap-16 border-t-4 border-brand-gold">
+<div class="space-y-10">
+<div>
+<h2 class="font-headline-md text-headline-md mb-2">Úvěrová kalkulačka</h2>
+<p class="text-on-surface-variant font-body-md text-body-md">Nastavte si parametry podle svých potřeb.</p>
+</div>
+<!-- Range Inputs -->
+<div class="space-y-12">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface-variant">VÝŠE ÚVĚRU</label>
+<span class="font-headline-sm text-headline-sm text-primary" id="amount-val">500 000 Kč</span>
+</div>
+<input class="w-full h-1 bg-surface-container-highest appearance-none rounded-full accent-brand-gold" max="5000000" min="100000" oninput="updateValues()" step="50000" type="range" value="500000"/>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface-variant">DOBA SPLÁCENÍ</label>
+<span class="font-headline-sm text-headline-sm text-primary" id="period-val">24 měsíců</span>
+</div>
+<input class="w-full h-1 bg-surface-container-highest appearance-none rounded-full accent-brand-gold" max="120" min="6" oninput="updateValues()" step="6" type="range" value="24"/>
+</div>
+</div>
+</div>
+<div class="bg-primary p-10 flex flex-col justify-center items-center text-center text-white space-y-6">
+<span class="font-label-md text-label-md text-secondary-fixed/70 uppercase tracking-[0.2em]">Odhadovaná měsíční splátka</span>
+<div class="font-display-lg text-display-lg text-secondary-fixed" id="payment-val">
+                            24 850 Kč
+                        </div>
+<p class="text-secondary-fixed-dim/60 font-body-md text-body-md max-w-xs">
+                            Konečná úroková sazba bude stanovena po posouzení vaší žádosti.
+                        </p>
+<button class="w-full bg-brand-gold py-4 text-white font-label-md text-label-md uppercase tracking-widest hover:scale-[0.98] transition-transform">
+                            Požádat o nezávaznou nabídku
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid: About & Values -->
+<section class="py-section-gap px-container-desktop max-w-7xl mx-auto" id="o-nas">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline-md text-headline-md text-primary">Proč Peníze Hned?</h2>
+<div class="w-20 h-1 bg-brand-gold mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="p-10 bg-white shadow-[0_10px_30px_rgba(15,39,68,0.05)] hover:-translate-y-2 transition-all duration-300 border-b border-transparent hover:border-brand-gold">
+<span class="material-symbols-outlined text-brand-gold text-4xl mb-6">bolt</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Rychlost</h3>
+<p class="text-on-surface-variant font-body-md">Schválení žádosti a vyplacení prostředků probíhá v řádu hodin, nikoliv týdnů jako v běžných bankách.</p>
+</div>
+<div class="p-10 bg-white shadow-[0_10px_30px_rgba(15,39,68,0.05)] hover:-translate-y-2 transition-all duration-300 border-b border-transparent hover:border-brand-gold">
+<span class="material-symbols-outlined text-brand-gold text-4xl mb-6">transcribe</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Transparentnost</h3>
+<p class="text-on-surface-variant font-body-md">Žádné skryté poplatky. Všechny smluvní podmínky jsou jasně definované a srozumitelné pro každého.</p>
+</div>
+<div class="p-10 bg-white shadow-[0_10px_30px_rgba(15,39,68,0.05)] hover:-translate-y-2 transition-all duration-300 border-b border-transparent hover:border-brand-gold">
+<span class="material-symbols-outlined text-brand-gold text-4xl mb-6">verified</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Důvěra</h3>
+<p class="text-on-surface-variant font-body-md">Jsme stabilní česká společnost s dlouholetou historií a stovkami spokojených klientů napříč obory.</p>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-section-gap bg-surface-container-low" id="reference">
+<div class="px-container-desktop max-w-7xl mx-auto">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Důvěra našich klientů je pro nás prioritou</h2>
+<div class="space-y-stack-lg">
+<div class="relative pl-12">
+<span class="material-symbols-outlined absolute left-0 top-0 text-brand-gold text-4xl" data-weight="fill">format_quote</span>
+<p class="italic text-body-lg font-body-lg text-on-surface-variant mb-4">"Peníze Hned nám pomohli překlenout náročné období při rozjezdu nové pobočky. Profesionální přístup a rychlost byly rozhodující."</p>
+<span class="font-label-md text-label-md text-primary">— Marek Svoboda, Gastro Invest s.r.o.</span>
+</div>
+<div class="relative pl-12">
+<span class="material-symbols-outlined absolute left-0 top-0 text-brand-gold text-4xl" data-weight="fill">format_quote</span>
+<p class="italic text-body-lg font-body-lg text-on-surface-variant mb-4">"Nejvíce oceňuji lidský přístup a možnost předčasného splacení bez jakýchkoliv sankcí. Skutečně fér jednání."</p>
+<span class="font-label-md text-label-md text-primary">— Anna Nováková, OSVČ</span>
+</div>
+</div>
+</div>
+<div class="relative h-[400px]">
+<img class="w-full h-full object-cover shadow-xl" data-alt="A professional, clean photograph of a modern financial meeting room with high ceilings, large windows letting in soft natural light, and premium minimalist furniture. The color palette is composed of deep navy blue, warm gold accents, and bright white surfaces, suggesting a high-trust corporate environment. A group of professionals in tailored business attire are seen in soft focus in the background, conveying institutional reliability and success." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvr7l1QgQW5vN1-zjg6xWRZlSnF8nDEI5k-jVLMWMs7zCfEeZR9zl07F_Im6U7S9m79jR8EYUGJMt8E03WPxs8TTGkAJqmaCKHPF1xFjsO8CVZjlOCueymxVxgZAJGxsA_IJzvH5FxurEkTR8dfQl0DtNII8o9BaI1s3WlcaugH2UVg8_jTL5QU_wjjOEmuLISMQSeId9WQ4Uy8gocVZKRxNMr1DtDiLthIRoStV5Opjy8ZLXkRJIEgpVGN5wePEymJbzccWzEnw0"/>
+<div class="absolute -bottom-10 -left-10 bg-brand-gold text-white p-10 hidden lg:block">
+<div class="text-display-lg font-display-lg leading-none">12+</div>
+<div class="font-label-md text-label-md uppercase tracking-wider">Let zkušeností</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Area -->
+<section class="py-section-gap bg-background" id="kontakt">
+<div class="px-container-desktop max-w-7xl mx-auto">
+<div class="grid md:grid-cols-2 gap-20">
+<div class="space-y-12">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Kontaktujte nás</h2>
+<p class="text-on-surface-variant font-body-md">Náš tým expertů je připraven zodpovědět jakýkoliv váš dotaz v pracovní dny od 8:00 do 17:00.</p>
+</div>
+<div class="space-y-stack-lg">
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">ADRESA</p>
+<p class="font-body-md text-primary">Pobřežní 249/46, 186 00 Praha 8-Karlín</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">phone</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">TELEFON</p>
+<p class="font-body-md text-primary">+420 800 123 456</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant">EMAIL</p>
+<p class="font-body-md text-primary">info@penizehned.cz</p>
+</div>
+</div>
+</div>
+<div class="w-full h-64 grayscale shadow-sm border border-outline-variant/30" data-location="Prague" style=""></div>
+</div>
+<div class="bg-white p-10 md:p-14 shadow-xl border-l-4 border-brand-gold">
+<h3 class="font-headline-sm text-headline-sm mb-8">Napište nám</h3>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">JMÉNO A PŘÍJMENÍ</label>
+<input class="w-full bg-surface border-outline-variant/50 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold px-4 py-3 transition-all" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">EMAIL</label>
+<input class="w-full bg-surface border-outline-variant/50 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold px-4 py-3 transition-all" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant">ZPRÁVA</label>
+<textarea class="w-full bg-surface border-outline-variant/50 focus:border-brand-gold focus:ring-1 focus:ring-brand-gold px-4 py-3 transition-all" rows="4"></textarea>
+</div>
+<div class="flex items-start gap-4">
+<input class="mt-1 rounded-none border-outline-variant text-brand-gold focus:ring-brand-gold" type="checkbox"/>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Souhlasím se zpracováním osobních údajů v souladu s GDPR a podmínkami ochrany soukromí.</p>
+</div>
+<button class="w-full bg-primary text-white py-4 font-label-md text-label-md uppercase tracking-widest hover:bg-brand-navy transition-all transform hover:translate-y-[-2px] hover:shadow-lg" type="submit">
+                                Odeslat poptávku
+                            </button>
+</form>
+</div>
+</div>
+</div>
+</section>
 </main>
-
-<footer>
-    <div class="container footer-content">
-        <p>&copy; 2026 Peníze Hned s.r.o.</p>
-        <div class="footer-links">
-            <a href="privacy.html" data-lang-cs="Ochrana soukromí" data-lang-sk="Ochrana súkromia" data-lang-en="Privacy">Ochrana soukromí</a>
-            <a href="terms.html" data-lang-cs="Podmínky" data-lang-sk="Podmienky" data-lang-en="Terms">Podmínky</a>
-        </div>
-    </div>
+<!-- Footer -->
+<footer class="bg-tertiary text-on-tertiary border-t-4 border-brand-gold py-20">
+<div class="px-container-desktop max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1 md:col-span-1 space-y-6">
+<img alt="Peníze Hned Footer Logo" class="h-10 brightness-0 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDropQq2paLFnyGI2CKFro1w5l2oqrpgWmGN3hrKRgs4Y7Oww7_uiAQQ58SknImhfflKtrL8tRC8G96VtLyROdOwgLlwTFIYdBSJOgW6tu1MwGjl9QgHwfqFI9chqHjqJ6PV97nf2DnYsoDeJiwZWef1Rr3TMSbqvSNqRkzcR61wxjhi6H-maNDjHTJHvu-MKMKzFaLEKkrLmjcaDt3IkPKH-JSdtt1Vah_PTkt9ImxL7JhBuA9RATXXZdg1qOzumNp0XTEGkR1sQU"/>
+<p class="font-body-md text-label-md text-on-tertiary-container">
+                    Peníze Hned s.r.o. je certifikovaný poskytovatel nebankovních úvěrů pod dohledem ČNB.
+                </p>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-md text-label-md text-secondary-fixed uppercase tracking-widest">Služby</h4>
+<ul class="space-y-4 font-label-md text-label-md text-on-tertiary-container">
+<li><a class="hover:text-white transition-colors" href="#">Podnikatelské úvěry</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Osobní půjčky</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Refinancování</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Kalkulačka splátek</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-md text-label-md text-secondary-fixed uppercase tracking-widest">Společnost</h4>
+<ul class="space-y-4 font-label-md text-label-md text-on-tertiary-container">
+<li><a class="hover:text-white transition-colors" href="#">O nás</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Reference</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Kariéra</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Kontakt</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-md text-label-md text-secondary-fixed uppercase tracking-widest">Právní informace</h4>
+<ul class="space-y-4 font-label-md text-label-md text-on-tertiary-container">
+<li><a class="hover:text-white transition-colors" href="#">Ochrana údajů</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Právní doložka</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Stížnosti</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Mapa webu</a></li>
+</ul>
+</div>
+</div>
+<div class="px-container-desktop max-w-7xl mx-auto mt-20 pt-10 border-t border-on-tertiary/10 flex flex-col md:flex-row justify-between items-center gap-4 text-label-sm font-label-sm text-on-tertiary-container/60">
+<span>© 2024 Peníze Hned s.r.o. Všechna práva vyhrazena.</span>
+<div class="flex gap-6">
+<a class="hover:text-white transition-colors" href="#">LinkedIn</a>
+<a class="hover:text-white transition-colors" href="#">Facebook</a>
+<a class="hover:text-white transition-colors" href="#">Instagram</a>
+</div>
+</div>
 </footer>
+<script>
+        function updateValues() {
+            const amountInput = document.querySelectorAll('input[type="range"]')[0];
+            const periodInput = document.querySelectorAll('input[type="range"]')[1];
+            
+            const amount = parseInt(amountInput.value);
+            const months = parseInt(periodInput.value);
+            
+            document.getElementById('amount-val').innerText = amount.toLocaleString('cs-CZ') + ' Kč';
+            document.getElementById('period-val').innerText = months + ' měsíců';
+            
+            // Simplified calculation for mockup (Principal/Months + arbitrary 5% interest margin)
+            const monthlyPayment = Math.round((amount / months) * 1.05);
+            document.getElementById('payment-val').innerText = monthlyPayment.toLocaleString('cs-CZ') + ' Kč';
+        }
 
-<script src="script.js"></script>
-</body>
-</html>
+        // Initialize values on load
+        window.onload = updateValues;
+    </script>
+</body></html>
