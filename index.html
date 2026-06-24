@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<!-- Sticky Navigation Header -->
+<!-- Sticky Navigation Header (Compact Viewport Optimization) -->
 <header class="site-header">
     <div class="container header-flex">
         <div class="logo-area">
@@ -39,31 +39,34 @@
 <!-- Main Grid Canvas Layered Over Soft Warm Grey (#f4f6f9) -->
 <main class="main-canvas">
     
-    <!-- Approachable Interactivity: Loan Calculator Card -->
-    <section id="calculator-card" class="container elevated-card">
-        <header class="card-header">
-            <h2 class="section-title">Kalkulačka úvěru</h2>
-        </header>
-        <div class="calculator-grid">
-            <!-- Custom Gold Sliders -->
-            <div class="calc-controls-block">
-                <div class="range-group">
-                    <label for="amount" class="input-label">Požadovaná částka</label>
-                    <input id="amount" class="gold-range-slider" type="range" min="10000" max="1000000" value="50000" oninput="calc()">
-                    <div class="range-value-display"><span id="amountv">50 000</span> CZK</div>
+    <!-- Approachable Interactivity: Loan Calculator Card with Image Background Treatment -->
+    <section id="calculator-card" class="container elevated-card calculator-bg-card">
+        <div class="card-image-overlay"></div>
+        <div class="calculator-inner-content">
+            <header class="card-header">
+                <h2 class="section-title text-light">Kalkulačka úvěru</h2>
+            </header>
+            <div class="calculator-grid">
+                <!-- Custom Gold Sliders -->
+                <div class="calc-controls-block">
+                    <div class="range-group">
+                        <label for="amount" class="input-label text-light">Požadovaná částka</label>
+                        <input id="amount" class="gold-range-slider" type="range" min="10000" max="1000000" value="50000" oninput="calc()">
+                        <div class="range-value-display text-light-muted"><span id="amountv">50 000</span> CZK</div>
+                    </div>
+                    
+                    <div class="range-group">
+                        <label for="months" class="input-label text-light">Doba splácení</label>
+                        <input id="months" class="gold-range-slider" type="range" min="6" max="120" value="24" oninput="calc()">
+                        <div class="range-value-display text-light-muted"><span id="monthsv">24</span> měsíců</div>
+                    </div>
                 </div>
-                
-                <div class="range-group">
-                    <label for="months" class="input-label">Doba splácení</label>
-                    <input id="months" class="gold-range-slider" type="range" min="6" max="120" value="24" oninput="calc()">
-                    <div class="range-value-display"><span id="monthsv">24</span> měsíců</div>
+                <!-- High-Contrast Numeric Financial Output Block -->
+                <div class="calc-result-display-panel premium-dark-panel">
+                    <h3 class="result-panel-heading text-gold">Odhadovaná měsíční splátka</h3>
+                    <div class="numeric-output-large text-white"><span id="monthly">---</span> CZK</div>
+                    <p class="calc-disclaimer-text text-light-muted">*Tato kalkulace je pouze orientační a nezavazuje k uzavření smlouvy.</p>
                 </div>
-            </div>
-            <!-- High-Contrast Numeric Financial Output -->
-            <div class="calc-result-display-panel">
-                <h3 class="result-panel-heading">Odhadovaná měsíční splátka</h3>
-                <div class="numeric-output-large"><span id="monthly">---</span> CZK</div>
-                <p class="calc-disclaimer-text">*Tato kalkulace je pouze orientační a nezavazuje k uzavření smlouvy.</p>
             </div>
         </div>
     </section>
