@@ -1,46 +1,131 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Peníze Hned s.r.o.</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Peníze Hned s.r.o. | Prémiové finanční řešení</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <header>
-<div class="container">
-<h1>Peníze Hned s.r.o.</h1>
-<div class="langs">
-<button onclick="setLang('cs')">CZ</button>
-<button onclick="setLang('sk')">SK</button>
-<button onclick="setLang('en')">EN</button>
-</div>
-</div>
+    <div class="container header-flex">
+        <div class="logo-area">
+            <img src="logo.png" alt="Peníze Hned s.r.o. Logo" class="site-logo">
+        </div>
+        <div class="langs">
+            <button class="lang-btn active" onclick="setLang('cs')">CZ</button>
+            <button class="lang-btn" onclick="setLang('sk')">SK</button>
+            <button class="lang-btn" onclick="setLang('en')">EN</button>
+        </div>
+    </div>
 </header>
 
 <section class="hero">
-<h2 id="hero-title">Rychlá a transparentní finanční řešení</h2>
-<p id="hero-text">Pomáháme klientům získat přehled o možnostech financování.</p>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h2 id="hero-title">Rychlá a transparentní finanční řešení</h2>
+        <p id="hero-text">Pomáháme klientům získat přehled o možnostech financování bez skrytých poplatků.</p>
+        <a href="#calculator" class="btn-premium">Spočítat splátku</a>
+    </div>
 </section>
 
-<section class="container">
-<h2>Kalkulačka</h2>
-<input id="amount" type="range" min="10000" max="1000000" value="50000" oninput="calc()">
-<p>Částka: <span id="amountv"></span> CZK</p>
-<input id="months" type="range" min="6" max="120" value="24" oninput="calc()">
-<p>Měsíce: <span id="monthsv"></span></p>
-<p>Měsíční splátka: <span id="monthly"></span></p>
-</section>
+<main class="main-content">
+    <!-- Calculator Section -->
+    <section id="calculator" class="container section-card">
+        <h2 class="section-title">Kalkulačka úvěru</h2>
+        <div class="calculator-grid">
+            <div class="calc-controls">
+                <div class="range-group">
+                    <label for="amount">Požadovaná částka</label>
+                    <input id="amount" type="range" min="10000" max="1000000" value="50000" oninput="calc()">
+                    <div class="range-value"><span id="amountv">50 000</span> CZK</div>
+                </div>
+                
+                <div class="range-group">
+                    <label for="months">Doba splácení</label>
+                    <input id="months" type="range" min="6" max="120" value="24" oninput="calc()">
+                    <div class="range-value"><span id="monthsv">24</span> měsíců</div>
+                </div>
+            </div>
+            <div class="calc-result">
+                <h3>Odhadovaná měsíční splátka</h3>
+                <div class="result-display"><span id="monthly">---</span> CZK</div>
+                <p class="calc-disclaimer">*Tato kalkulace je pouze orientační a nezavazuje k uzavření smlouvy.</p>
+            </div>
+        </div>
+    </section>
 
-<section class="container">
-<h2>Kontakt</h2>
-<p>Herlianska 132/16, Bratislava-Ružinov, 82102</p>
-<p><a href="mailto:szabo@penizenahned.cz">szabo@penizenahned.cz</a></p>
-</section>
+    <!-- About Us Section -->
+    <section class="container section-card">
+        <h2 class="section-title">O nás</h2>
+        <p class="about-text">Jsme stabilní lokální partner v oblasti finančních řešení a úvěrů. Naším cílem je pomáhat lidem bezpečně a transparentně překlenout finanční potřeby – ať už jde o bydlení, podnikání nebo nečekané výdaje. Zakládáme si na férovém jednání, diskrétnosti a řešení šitém na míru každému klientovi.</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="container">
+        <h2 class="section-title text-center">Reference našich klientů</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="quote">"Rychlé a férové jednání. Potřeboval jsem překlenout složité období v podnikání a schválení úvěru proběhlo bez zbytečného papírování."</p>
+                <h4 class="client-name">Petr M., Brno</h4>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"Oceňuji lidský přístup a profesionální vystupování. Podmínky byly jasné od začátku do konce, žádné skryté poplatky."</p>
+                <h4 class="client-name">Jana K., Praha</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Form Section -->
+    <section class="container contact-grid">
+        <div class="contact-info section-card">
+            <h2 class="section-title">Kontakt</h2>
+            <p class="contact-lead">Máte dotazy k úvěrům nebo chcete probrat své možnosti? Ozvěte se nám.</p>
+            <div class="contact-details">
+                <p><strong>📍 Adresa:</strong> Herlianska 132/16, Bratislava-Ružinov, 82102</p>
+                <p><strong>✉️ E-mail:</strong> <a href="mailto:szabo@penizenahned.cz">szabo@penizenahned.cz</a></p>
+                <p><strong>📞 Telefon:</strong> +420 123 456 789</p>
+            </div>
+        </div>
+
+        <div class="contact-form-container section-card">
+            <h3 class="form-title">Nezávazná poptávka</h3>
+            <form class="premium-form">
+                <div class="form-group">
+                    <label for="form-name">Jméno a příjmení</label>
+                    <input type="text" id="form-name" required placeholder="Jan Novák">
+                </div>
+                <div class="form-group">
+                    <label for="form-email">E-mailová adresa</label>
+                    <input type="email" id="form-email" required placeholder="jan.novak@email.cz">
+                </div>
+                <div class="form-group">
+                    <label for="form-phone">Telefonní číslo</label>
+                    <input type="tel" id="form-phone" required placeholder="+420 000 000 000">
+                </div>
+                <div class="form-group">
+                    <label for="form-message">Mám zájem o více informací</label>
+                    <textarea id="form-message" rows="3" placeholder="Dobrý den, mám zájem o kalkulaci úvěru..."></textarea>
+                </div>
+                <button type="submit" class="btn-premium btn-full">Odeslat poptávku</button>
+            </form>
+        </div>
+    </section>
+</main>
 
 <footer>
-<a href="privacy.html">Privacy</a> |
-<a href="terms.html">Terms</a>
+    <div class="container footer-content">
+        <p>&copy; 2026 Peníze Hned s.r.o. Všechna práva vyhrazena.</p>
+        <div class="footer-links">
+            <a href="privacy.html">Ochrana soukromí (Privacy)</a>
+            <a href="terms.html">Obchodní podmínky (Terms)</a>
+        </div>
+    </div>
 </footer>
 
 <script src="script.js"></script>
