@@ -2,8 +2,8 @@
 <html lang="cs">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Peníze Hned s.r.o. | Prémiové finanční řešení</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Peníze Hned s.r.o. | Premium</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,121 +11,116 @@
 </head>
 <body>
 
-<header class="site-header">
+<header>
     <div class="container header-flex">
-        <div class="logo-area">
-            <img src="logo.png" alt="Peníze Hned s.r.o. Logo" class="site-logo">
+        <!-- Dark badge wrapper to fix the white logo issue -->
+        <div class="logo-badge">
+            <img src="logo.png" alt="Peníze Hned s.r.o." class="site-logo">
         </div>
-        <nav class="langs" aria-label="Výběr jazyka">
-            <button class="lang-btn active" onclick="setLang('cs')">CZ</button>
-            <button class="lang-btn" onclick="setLang('sk')">SK</button>
-            <button class="lang-btn" onclick="setLang('en')">EN</button>
-        </nav>
+        <div class="langs">
+            <button class="lang-btn active" data-lang="cs" onclick="setLang('cs')">CZ</button>
+            <button class="lang-btn" data-lang="sk" onclick="setLang('sk')">SK</button>
+            <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        </div>
     </div>
 </header>
 
-<section class="hero-gradient-wrapper">
+<section class="hero">
     <div class="hero-content">
-        <h2 id="hero-title" class="hero-main-title">Rychlá a transparentní finanční řešení</h2>
-        <p id="hero-text" class="hero-sub-text">Pomáháme klientům získat přehled o možnostech financování bez skrytých poplatků.</p>
-        <a href="#calculator-card" class="btn-premium hero-cta">Spočítat splátku</a>
+        <h2 id="hero-title" 
+            data-lang-cs="Rychlá a transparentní finanční řešení" 
+            data-lang-sk="Rýchle a transparentné finančné riešenia" 
+            data-lang-en="Fast and Transparent Financial Solutions">Rychlá a transparentní finanční řešení</h2>
+        <p id="hero-text" 
+            data-lang-cs="Pomáháme klientům získat přehled o možnostech financování." 
+            data-lang-sk="Pomáhame klientom získať prehľad o možnostiach financovania." 
+            data-lang-en="We help clients gain an overview of financing options.">Pomáháme klientům získat přehled o možnostech financování.</p>
+        <a href="#calculator" class="btn-premium"
+           data-lang-cs="Spočítat splátku" data-lang-sk="Spočítať splátku" data-lang-en="Calculate Payment">Spočítat splátku</a>
     </div>
 </section>
 
-<main class="main-canvas">
-    
-    <section id="calculator-card" class="container elevated-card">
-        <header class="card-header">
-            <h2 class="section-title">Kalkulačka úvěru</h2>
-        </header>
+<main class="main-content">
+    <!-- Calculator Section -->
+    <section id="calculator" class="container section-card">
+        <h2 class="section-title" data-lang-cs="Kalkulačka úvěru" data-lang-sk="Kalkulačka úveru" data-lang-en="Loan Calculator">Kalkulačka úvěru</h2>
         <div class="calculator-grid">
-            <div class="calc-controls-block">
+            <div class="calc-controls">
                 <div class="range-group">
-                    <label for="amount" class="input-label">Požadovaná částka</label>
-                    <input id="amount" class="gold-range-slider" type="range" min="10000" max="1000000" value="50000" oninput="calc()">
-                    <div class="range-value-display"><span id="amountv">50 000</span> CZK</div>
+                    <label data-lang-cs="Požadovaná částka" data-lang-sk="Požadovaná čiastka" data-lang-en="Requested Amount">Požadovaná částka</label>
+                    <input id="amount" type="range" min="10000" max="1000000" value="50000" oninput="calc()">
+                    <div class="range-value"><span id="amountv">50 000</span> CZK</div>
                 </div>
                 
                 <div class="range-group">
-                    <label for="months" class="input-label">Doba splácení</label>
-                    <input id="months" class="gold-range-slider" type="range" min="6" max="120" value="24" oninput="calc()">
-                    <div class="range-value-display"><span id="monthsv">24</span> měsíců</div>
+                    <label data-lang-cs="Doba splácení" data-lang-sk="Doba splácania" data-lang-en="Repayment Period">Doba splácení</label>
+                    <input id="months" type="range" min="6" max="120" value="24" oninput="calc()">
+                    <div class="range-value"><span id="monthsv">24</span> <span data-lang-cs="měsíců" data-lang-sk="mesiacov" data-lang-en="months">měsíců</span></div>
                 </div>
             </div>
-            <div class="calc-result-display-panel">
-                <h3 class="result-panel-heading">Odhadovaná měsíční splátka</h3>
-                <div class="numeric-output-large"><span id="monthly">---</span> CZK</div>
-                <p class="calc-disclaimer-text">*Tato kalkulace je pouze orientační a nezavazuje k uzavření smlouvy.</p>
+            <div class="calc-result">
+                <h3 data-lang-cs="Odhadovaná měsíční splátka" data-lang-sk="Odhadovaná mesačná splátka" data-lang-en="Estimated Monthly Payment">Odhadovaná měsíční splátka</h3>
+                <div class="result-display"><span id="monthly">---</span> CZK</div>
+                <p class="calc-disclaimer" data-lang-cs="*Tato kalkulace je pouze orientační." data-lang-sk="*Táto kalkulácia je iba orientačná." data-lang-en="*This calculation is indicative only.">*Tato kalkulace je pouze orientační.</p>
             </div>
         </div>
     </section>
 
-    <section class="container elevated-card">
-        <header class="card-header">
-            <h2 class="section-title">O nás</h2>
-        </header>
-        <article class="about-us-content-body">
-            <p>Jsme stabilní lokální partner v oblasti finančních řešení a úvěrů. Naším cílem je pomáhat lidem bezpečně a transparentně překlenout finanční potřeby – ať už jde o bydlení, podnikání nebo nečekané výdaje. Zakládáme si na férovém jednání, diskrétnosti a řešení šitém na míru každému klientovi.</p>
-        </article>
+    <!-- About Us Section -->
+    <section class="container section-card">
+        <h2 class="section-title" data-lang-cs="O nás" data-lang-sk="O nás" data-lang-en="About Us">O nás</h2>
+        <p class="about-text" 
+           data-lang-cs="Jsme stabilní lokální partner v oblasti finančních řešení a úvěrů. Naším cílem je pomáhat lidem bezpečně a transparentně překlenout finanční potřeby." 
+           data-lang-sk="Sme stabilný lokálny partner v oblasti finančných riešení a úverov. Naším cieľom je pomáhať ľuďom bezpečne a transparentne preklenúť finančné potreby." 
+           data-lang-en="We are a stable local partner in financial solutions and loans. Our goal is to help people safely and transparently bridge financial needs.">
+           Jsme stabilní lokální partner v oblasti finančních řešení a úvěrů. Naším cílem je pomáhat lidem bezpečně a transparentně překlenout finanční potřeby.
+        </p>
     </section>
 
-    <section class="container testimonials-section-wrapper">
-        <h2 class="section-title title-centered">Reference našich klientů</h2>
-        <div class="testimonials-responsive-grid">
-            <blockquote class="testimonial-elevated-card">
-                <p class="client-quote-text">"Rychlé a férové jednání. Potřeboval jsem překlenout složité období v podnikání a schválení úvěru proběhlo bez zbytečného papírování."</p>
-                <cite class="client-identity-signature">Petr M., Brno</cite>
-            </blockquote>
-            
-            <blockquote class="testimonial-elevated-card">
-                <p class="client-quote-text">"Oceňuji lidský přístup a profesionální vystupování. Podmínky byly jasné od začátku do konce, žádné skryté poplatky."</p>
-                <cite class="client-identity-signature">Jana K., Praha</cite>
-            </blockquote>
+    <!-- Testimonials Section -->
+    <section class="container">
+        <h2 class="section-title text-center" data-lang-cs="Reference" data-lang-sk="Referencie" data-lang-en="Testimonials">Reference</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="quote" data-lang-cs="&quot;Rychlé a férové jednání.&quot;" data-lang-sk="&quot;Rýchle a férové konanie.&quot;" data-lang-en="&quot;Fast and fair processing.&quot;">"Rychlé a férové jednání."</p>
+                <h4 class="client-name">Petr M., Brno</h4>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote" data-lang-cs="&quot;Oceňuji lidský přístup.&quot;" data-lang-sk="&quot;Oceňujem ľudský prístup.&quot;" data-lang-en="&quot;I appreciate the human approach.&quot;">"Oceňuji lidský přístup."</p>
+                <h4 class="client-name">Jana K., Praha</h4>
+            </div>
         </div>
     </section>
 
-    <section class="container contact-split-grid">
-        <div class="contact-details-panel elevated-card">
-            <h2 class="section-title">Kontakt</h2>
-            <p class="contact-intro-lead">Máte dotazy k úvěrům nebo chcete probrat své možnosti? Ozvěte se nám.</p>
-            <address class="structured-address-block">
-                <p class="address-item"><strong>📍 Adresa:</strong> Herlianska 132/16, Bratislava-Ružinov, 82102</p>
-                <p class="address-item"><strong>✉️ E-mail:</strong> <a href="mailto:szabo@penizenahned.cz" class="high-intent-link">szabo@penizenahned.cz</a></p>
-                <p class="address-item"><strong>📞 Telefon:</strong> +420 123 456 789</p>
-            </address>
+    <!-- Contact Section -->
+    <section class="container contact-grid">
+        <div class="contact-info section-card">
+            <h2 class="section-title" data-lang-cs="Kontakt" data-lang-sk="Kontakt" data-lang-en="Contact">Kontakt</h2>
+            <div class="contact-details">
+                <p><strong>📍 Adresa:</strong> Herlianska 132/16, Bratislava-Ružinov, 82102[cite: 1]</p>
+                <p><strong>✉️ E-mail:</strong> <a href="mailto:szabo@penizenahned.cz">szabo@penizenahned.cz</a>[cite: 1]</p>
+            </div>
         </div>
 
-        <div class="contact-form-panel elevated-card">
-            <h3 class="form-panel-title">Nezávazná poptávka</h3>
-            <form class="premium-conversion-form">
-                <div class="form-input-group">
-                    <label class="form-field-label" id="label-name" for="form-name">Jméno a příjmení</label>
-                    <input type="text" id="form-name" class="interactive-field" required placeholder="Jan Novák">
+        <div class="contact-form-container section-card">
+            <h3 class="form-title" data-lang-cs="Nezávazná poptávka" data-lang-sk="Nezáväzná dopyt" data-lang-en="Inquiry Form">Nezávazná poptávka</h3>
+            <form class="premium-form">
+                <div class="form-group">
+                    <label for="form-name" data-lang-cs="Jméno" data-lang-sk="Meno" data-lang-en="Name">Jméno</label>
+                    <input type="text" id="form-name" required placeholder="Jan Novák">
                 </div>
-                <div class="form-input-group">
-                    <label class="form-field-label" id="label-email" for="form-email">E-mailová adresa</label>
-                    <input type="email" id="form-email" class="interactive-field" required placeholder="jan.novak@email.cz">
-                </div>
-                <div class="form-input-group">
-                    <label class="form-field-label" id="label-phone" for="form-phone">Telefonní číslo</label>
-                    <input type="tel" id="form-phone" class="interactive-field" required placeholder="+420 000 000 000">
-                </div>
-                <div class="form-input-group">
-                    <label class="form-field-label" id="label-message" for="form-message">Mám zájem o více informací</label>
-                    <textarea id="form-message" class="interactive-field field-textarea" rows="3" placeholder="Dobrý den, mám zájem o kalkulaci úvěru..."></textarea>
-                </div>
-                <button type="submit" class="btn-premium btn-block-conversion">Odeslat poptávku</button>
+                <button type="submit" class="btn-premium btn-full" data-lang-cs="Odeslat" data-lang-sk="Odoslať" data-lang-en="Submit">Odeslat</button>
             </form>
         </div>
     </section>
 </main>
 
-<footer class="corporate-footer">
-    <div class="container footer-flex-content">
-        <p class="copyright-text">&copy; 2026 Peníze Hned s.r.o. Všechna práva vyhrazena.</p>
-        <div class="footer-legal-links">
-            <a href="privacy.html" class="legal-link">Ochrana soukromí (Privacy)</a>
-            <a href="terms.html" class="legal-link">Obchodní podmínky (Terms)</a>
+<footer>
+    <div class="container footer-content">
+        <p>&copy; 2026 Peníze Hned s.r.o.</p>
+        <div class="footer-links">
+            <a href="privacy.html" data-lang-cs="Ochrana soukromí" data-lang-sk="Ochrana súkromia" data-lang-en="Privacy">Ochrana soukromí</a>
+            <a href="terms.html" data-lang-cs="Podmínky" data-lang-sk="Podmienky" data-lang-en="Terms">Podmínky</a>
         </div>
     </div>
 </footer>
